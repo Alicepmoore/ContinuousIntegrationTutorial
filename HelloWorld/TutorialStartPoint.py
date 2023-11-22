@@ -33,10 +33,10 @@ def PollForChanges():
             RunBatchFile()
 
 def RunForever():
-	WAIT_TIME_SECONDS = 60;
-	ticker = threading.Event()
-	while not ticker.wait(WAIT_TIME_SECONDS):
-		PollForChanges()
+	##WAIT_TIME_SECONDS = 60;
+	##ticker = threading.Event()
+	##while not ticker.wait(WAIT_TIME_SECONDS):
+	PollForChanges()
 
 PollForChanges()
 RunForever()
