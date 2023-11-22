@@ -11,6 +11,7 @@ void MainGameEntry( PLAY_IGNORE_COMMAND_LINE )
 {
 	Play::CreateManager( DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SCALE );
 	float changeOne = 1;
+	float changeTwo = 2;
 }
 
 // Called by PlayBuffer every frame (60 times a second!)
