@@ -22,12 +22,18 @@ def RunGitCommand():
 		
 
 def PollForChanges():
-	print(time.ctime())
-	RunBatchFile()
-	RunGitCommand()
+    print(time.ctime())
+    previous_status = RunGitCommand()
+    while True:
+        time.sleep(60)  # Check every 60 seconds
+        current_status = RunGitCommand()
+        if current_status != previous_status:
+            print("Changes detected!")
+            previous_status = current_status
+            RunBatchFile()
 
 def RunForever():
-	WAIT_TIME_SECONDS = 5
+	WAIT_TIME_SECONDS = 60;
 	ticker = threading.Event()
 	while not ticker.wait(WAIT_TIME_SECONDS):
 		PollForChanges()

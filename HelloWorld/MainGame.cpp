@@ -10,11 +10,13 @@ int DISPLAY_SCALE = 2;
 void MainGameEntry( PLAY_IGNORE_COMMAND_LINE )
 {
 	Play::CreateManager( DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SCALE );
+	float changeOne = 1;
 }
 
 // Called by PlayBuffer every frame (60 times a second!)
 bool MainGameUpdate( float elapsedTime )
 {
+	//a change
 	Play::ClearDrawingBuffer( Play::cOrange );
 	Play::DrawDebugText( { DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2 }, "Hello World!" );
 	Play::PresentDrawingBuffer();
